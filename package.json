@@ -1,0 +1,16 @@
+{
+  "name": "yt-thumbnail-face-swap-generator",
+  "version": "1.0.0",
+  "description": "A Node.js and plain HTML app for AI YouTube thumbnail face swapping with Gemini image preview.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.52.0",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "multer": "^2.0.2"
+  }
+}

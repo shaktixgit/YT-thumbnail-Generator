@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YT Thumbnail Face Swap Generator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro">
+        <p class="eyebrow">AI Thumbnail Tool</p>
+        <h1>YT Thumbnail Face Swap Generator</h1>
+        <p class="summary">
+          Upload a thumbnail, add a portrait head, and generate a polished face-swapped YouTube thumbnail with optional creative instructions.
+        </p>
+      </section>
+
+      <section class="workspace" aria-label="Thumbnail generator">
+        <form id="generatorForm" class="control-panel">
+          <div class="upload-grid">
+            <label class="upload-card">
+              <span class="label-text">Thumbnail Image</span>
+              <input id="thumbnailInput" name="thumbnail" type="file" accept="image/*" required />
+              <span class="upload-help">Base YouTube thumbnail</span>
+              <img id="thumbnailPreview" class="preview" alt="Thumbnail preview" hidden />
+            </label>
+
+            <label class="upload-card">
+              <span class="label-text">Portrait Head</span>
+              <input id="portraitInput" name="portrait" type="file" accept="image/*" required />
+              <span class="upload-help">Face/head source image</span>
+              <img id="portraitPreview" class="preview" alt="Portrait preview" hidden />
+            </label>
+          </div>
+
+          <label class="instructions-label" for="instructionsInput">Extra Instructions</label>
+          <textarea
+            id="instructionsInput"
+            name="instructions"
+            rows="5"
+            placeholder="Example: keep the lighting dramatic, make the expression excited, preserve all thumbnail text..."
+          ></textarea>
+
+          <button id="generateButton" class="generate-button" type="submit">
+            Generate Face Swap
+          </button>
+
+          <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <section class="result-panel" aria-label="Generated result">
+          <div class="result-header">
+            <h2>Generated Thumbnail</h2>
+            <a id="downloadButton" class="download-button" download="face-swapped-thumbnail.png" hidden>
+              Download
+            </a>
+          </div>
+          <div class="result-frame">
+            <p id="emptyResult" class="empty-result">Your generated thumbnail will appear here.</p>
+            <img id="resultImage" class="result-image" alt="Generated thumbnail result" hidden />
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

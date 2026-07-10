@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:3000/#studio -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Thumbnail Face Swap Generator</title>
+    <link rel="stylesheet" href="./YT Thumbnail Face Swap Generator_files/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card" aria-label="Thumbnail face swap generator">
+        <header class="topbar">
+          <a class="brand" href="http://localhost:3000/">NANOSWAP</a>
+          <nav class="nav-links" aria-label="Primary navigation">
+            <a href="http://localhost:3000/#studio">Studio</a>
+            <a href="http://localhost:3000/#result">Result</a>
+            <a href="http://localhost:3000/#instructions">Prompt</a>
+          </nav>
+          <a class="top-action" href="http://localhost:3000/#studio">Start free</a>
+        </header>
+
+        <section class="hero-copy">
+          <p class="eyebrow">AI thumbnail face swap</p>
+          <h1>Swap thumbnail faces with <span>nano precision.</span></h1>
+          <p class="summary">
+            Upload a YouTube thumbnail and a portrait head, add optional creative direction, then generate a clean, clickable thumbnail composition.
+          </p>
+        </section>
+
+        <section id="studio" class="workspace">
+          <form id="generatorForm" class="control-panel">
+            <div class="section-heading">
+              <p>01</p>
+              <h2>Upload sources</h2>
+            </div>
+
+            <div class="upload-grid">
+              <label class="upload-card">
+                <span class="label-text">Thumbnail</span>
+                <span class="upload-help">Base YouTube image</span>
+                <input id="thumbnailInput" name="thumbnail" type="file" accept="image/*" required="">
+                <span class="choose-file">Choose image</span>
+                <img id="thumbnailPreview" class="preview" alt="Thumbnail preview" hidden="">
+              </label>
+
+              <label class="upload-card">
+                <span class="label-text">Portrait head</span>
+                <span class="upload-help">Replacement face source</span>
+                <input id="portraitInput" name="portrait" type="file" accept="image/*" required="">
+                <span class="choose-file">Choose image</span>
+                <img id="portraitPreview" class="preview" alt="Portrait preview" hidden="">
+              </label>
+            </div>
+
+            <div id="instructions" class="instruction-block">
+              <label class="instructions-label" for="instructionsInput">Extra instructions</label>
+              <textarea id="instructionsInput" name="instructions" rows="5" placeholder="Example: preserve all text, match dramatic lighting, keep the face centered and realistic..."></textarea>
+            </div>
+
+            <button id="generateButton" class="generate-button" type="submit">
+              Generate face swap
+            </button>
+
+            <p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+          </form>
+
+          <section id="result" class="result-panel" aria-label="Generated result">
+            <div class="result-header">
+              <div>
+                <p>02</p>
+                <h2>Generated thumbnail</h2>
+              </div>
+              <a id="downloadButton" class="download-button" download="face-swapped-thumbnail.png" hidden="">
+                Download
+              </a>
+            </div>
+            <div class="result-frame">
+              <p id="emptyResult" class="empty-result">Your generated thumbnail will appear here.</p>
+              <img id="resultImage" class="result-image" alt="Generated thumbnail result" hidden="">
+            </div>
+          </section>
+        </section>
+
+        <footer class="microcopy">
+          <span>Gemini image preview model</span>
+          <span>1280 x 720 friendly workflow</span>
+          <span>Private local uploads</span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./YT Thumbnail Face Swap Generator_files/script.js.download"></script>
+  
+
+</body></html>
